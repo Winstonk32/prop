@@ -1,15 +1,4 @@
-# DateByte - A Techie Way to Ask Her Out 💻💘
 
-<div align="left">
-
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/tharushkadinujaya05/datebyte)
-![GitHub all releases](https://img.shields.io/github/downloads/tharushkadinujaya05/obsiai/datebyte)
-![GitHub](https://img.shields.io/github/license/tharushkadinujaya05/datebyte)
-![Screen Recording Nov 17 2024](https://github.com/user-attachments/assets/707f67f6-c38a-41ae-99e8-c34cfbede8fd)
-
-
-Are you a tech guy? Want to ask her out in a way she’ll never forget? DateByte lets you send the cutest, tech-inspired date invite—because who says coding can’t be romantic? 🤨
-</div>
 
 ## 📑 Table of Contents
 
@@ -54,22 +43,19 @@ To get started with the Date Proposal App, follow these steps:
 
 1. Clone the repository:
 ```sh
-git clone https://github.com/tharushkadinujaya05/datebyte.git
 ```
 
 2. Navigate to the project directory:
 ```sh
-cd datebyte
+
 ```
 
 3. Install the dependencies:
 ```sh
-npm install
 ```
 
 4. Run the development server:
 ```sh
-npm run dev
 ```
 
 Open your browser and navigate to http://localhost:3000 to see the app in action.
@@ -151,18 +137,3 @@ If you find this project helpful:
 - 🐛 Report issues on GitHub
 - 💡 Submit feature requests
 
-<p>
-  <a href="https://www.buymeacoffee.com/neo_3xd">
-    <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" width="150" alt="neo_3xd" />
-  </a>
-</p>
-
-<br><br>
-
----
-
-<div align="center">
-
-**Made with ❤️ by [Neo](https://github.com/tharushkadinujaya05)**
-
-</div>
