@@ -102,7 +102,7 @@ export default function EnchantingDateProposalApp() {
                 There is no &quot;NOOOOOO&quot;
               </DialogTitle>
               <DialogDescription className="text-lg text-pink-500">
-                It's funny you think you have a choice!
+                It&apos;s funny you think you have a choice!
               </DialogDescription>
             </DialogHeader>
             <motion.img
@@ -281,7 +281,7 @@ export default function EnchantingDateProposalApp() {
         />
         <div className="flex justify-between mt-2 text-pink-500">
           <span>Let&apos;s Cancel!</span>
-          <span>Can't wait!</span>
+          <span>Can&apos;t wait!</span>
         </div>
       </div>
       <motion.div
@@ -347,7 +347,7 @@ export default function EnchantingDateProposalApp() {
   useEffect(() => {
     const saveAnswers = async () => {
       console.log('Saved answers:', answers);
-      const submittedAnswers = Object.entries(answers).filter(([key, value]) => value !== undefined);
+      const submittedAnswers = Object.entries(answers).filter(([ value]) => value !== undefined);
       // Save to localStorage
       localStorage.setItem('dateProposalAnswers', JSON.stringify(submittedAnswers));
 
