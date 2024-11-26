@@ -20,7 +20,7 @@
 1. Send her the app link
 2. She follows the interactive steps:
    - Initial proposal question
-   - Date and time selection
+   - Date and the time selection
    - Food preferences
    - Movie selection
    - Excitement level
