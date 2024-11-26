@@ -21,7 +21,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Heart, Star, Coffee, Film, Utensils, Clock, IceCreamCone, Pizza,  Ban } from "lucide-react";
+import { Heart, Star, Coffee, Film, Utensils, Clock, IceCreamCone, Pizza, Ban } from "lucide-react";
 import confetti from "canvas-confetti";
 
 interface Answers {
@@ -32,9 +32,6 @@ interface Answers {
   movie: string;
   excitement: number;
 }
-
-// Dynamic import of HeartBackground with no SSR
-
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -70,8 +67,8 @@ export default function EnchantingDateProposalApp() {
   const steps = [
     // Step 0: Initial Question
     <motion.div key="step0" className="text-center" {...fadeInUp}>
-      <h1 className="text-4xl font-bold mb-6 text-pink-600">
-        May i interest you in a day out with me?
+      <h1 className="text-4xl font-bold mb-6 text-pink-500">
+        May I interest you in a day out with me?
       </h1>
       <motion.img
         initial={{ opacity: 0, scale: 0.8 }}
@@ -87,7 +84,7 @@ export default function EnchantingDateProposalApp() {
             handleAnswer("isAvailable", true);
             triggerConfetti();
           }}
-          className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105"
+          className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
         >
           Yes, I&apos;d love to!
         </Button>
@@ -95,7 +92,7 @@ export default function EnchantingDateProposalApp() {
           <DialogTrigger asChild>
             <Button
               variant="outline"
-              className="border-pink-300 text-pink-500 hover:bg-pink-100 font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105"
+              className="border-pink-300 text-pink-500 hover:bg-pink-100 font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               No
             </Button>
@@ -112,17 +109,17 @@ export default function EnchantingDateProposalApp() {
             <motion.img
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration:  0.5 }}
               src="https://media.tenor.com/KvgbYYlBBa0AAAAM/im-afraid-thats-not-an-option-greg-miller.gif"
               alt="Excited bear gif"
               className="w-full max-w-md mx-auto mb-4 rounded-lg shadow-lg"
-            />{" "}
+            />
             <Button
               onClick={() => {
                 handleAnswer("isAvailable", true);
                 triggerConfetti();
               }}
-              className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105"
+              className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               Okay, I&apos;ll come!
             </Button>
@@ -133,7 +130,7 @@ export default function EnchantingDateProposalApp() {
 
     // Step 1: Date and Time Selection
     <motion.div key="step1" className="text-center" {...fadeInUp}>
-      <h2 className="text-3xl font-bold mb-6 text-pink-600">
+      <h2 className="text-3xl font-bold mb-6 text-pink-500">
         YEYYYYYYYY, WHEN SHALL WE GO?
       </h2>
       <motion.img
@@ -170,7 +167,7 @@ export default function EnchantingDateProposalApp() {
       <Button
         onClick={() => setStep(step + 1)}
         disabled={!answers.date || !answers.time}
-        className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105 animate-pulse disabled:opacity-50 disabled:cursor-not-allowed"
+        className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105 animate-pulse disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
       >
         <Clock className="mr-2 h-5 w-5" /> Set our date!{" "}
         <Heart className="ml-2 h-5 w-5" />
@@ -179,22 +176,21 @@ export default function EnchantingDateProposalApp() {
 
     // Step 2: Movie Selection
     <motion.div key="step3" className="text-center" {...fadeInUp}>
-      <h2 className="text-3xl font-bold mb-6 text-pink-600">
+      <h2 className="text-3xl font-bold mb-6 text-pink-500">
         What movie shall we watch?
       </h2>
       <div className="grid grid-cols-2 gap-6 mb-6">
         {[
-          "Red One " ,
+          "Red One",
           "Moana 2",
           "Wicked",
           "Gladiator 2",
-    
         ].map((movie) => (
           <motion.button
             key={movie}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-white text-pink-600 hover:bg-pink-100 font-bold py-4 px-6 rounded-lg shadow-md transition-colors duration-300"
+            className="bg-black text-pink-500 hover:bg-pink-100 font-bold py-4 px-6 rounded-lg shadow-md transition-colors duration-300"
             onClick={() => {
               if (movie === "Something else") {
                 const customMovie = prompt(
@@ -213,59 +209,59 @@ export default function EnchantingDateProposalApp() {
       </div>
     </motion.div>,
 
-     // Step 3: Food Selection
-     <motion.div key="step2" className="text-center" {...fadeInUp}>
-     <h2 className="text-3xl font-bold mb-6 text-pink-600">
-       Pick your after movie snack?
-     </h2>
-     <div className="grid grid-cols-2 gap-6 mb-6">
-       {[
-         { name: "Icecream", icon: <IceCreamCone /> },
-         { name: "Pizza", icon: <Pizza /> },
-         { name: "Boba", icon: <Coffee /> },
-         { name: "Burgers", icon: <Utensils />},
-         { name: "Cake", icon: <Utensils />},
-         { name: "Mexican cuisine", icon: <Utensils /> },
-         { name: "Starvation is also an option, saves me my money ", icon: <Ban /> },
-         { name : "I'm undecisive like always", icon: <Utensils />},
-         {name: " I'll tell you on that day", icon: <Utensils />}
-       ].map(({ name, icon }) => (
-         <motion.button
-           key={name}
-           whileHover={{ scale: 1.05 }}
-           whileTap={{ scale: 0.95 }}
-           className={`h-32 flex flex-col items-center justify-center rounded-lg shadow-md transition-colors duration-300 ${
-             answers.food.includes(name)
-               ? "bg-pink-500 text-white"
-               : "bg-white text-pink-600 hover:bg-pink-100"
-           }`}
-           onClick={() => {
-             const newFood = answers.food.includes(name)
-               ? answers.food.filter((f) => f !== name)
-               : [...answers.food, name];
-             setAnswers({ ...answers, food: newFood });
-           }}
-         >
-           {icon}
-           <span className="mt-2 font-semibold">{name}</span>
-         </motion.button>
-       ))}
-     </div>
-     <Button
-       onClick={() => setStep(step + 1)}
-       disabled={answers.food.length === 0}
-       className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
-     >
-       It better be something nice!
-     </Button>
-   </motion.div>,
+    // Step 3: Food Selection
+    <motion.div key="step2" className="text-center" {...fadeInUp}>
+      <h2 className="text-3xl font-bold mb-6 text-pink-500">
+        Pick your after movie snack?
+      </h2>
+      <div className="grid grid-cols-2 gap-6 mb-6">
+        {[
+          { name: "Icecream", icon: <IceCreamCone /> },
+          { name: "Pizza", icon: <Pizza /> },
+          { name: "Boba", icon: <Coffee /> },
+          { name: "Burgers", icon: <Utensils /> },
+          { name: "Cake", icon: <Utensils /> },
+          { name: "Mexican cuisine", icon: <Utensils /> },
+          { name: "Starvation is also an option, saves me my money", icon: <Ban /> },
+          { name: "I'm undecisive like always", icon: <Utensils /> },
+          { name: "I'll tell you on that day", icon: <Utensils /> }
+        ].map(({ name, icon }) => (
+          <motion.button
+            key={name}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className={`h-32 flex flex-col items-center justify-center rounded-lg shadow-md transition-colors duration-300 ${
+              answers.food.includes(name)
+                ? "bg-pink-500 text-white"
+                : "bg-black text-pink-500 hover:bg-pink-100"
+            }`}
+            onClick={() => {
+              const newFood = answers.food.includes(name)
+                ? answers.food.filter((f) => f !== name)
+                : [...answers.food, name];
+              setAnswers({ ...answers, food: newFood });
+            }}
+          >
+            {icon}
+            <span className="mt-2 font-semibold">{name}</span>
+          </motion.button>
+        ))}
+      </div>
+      <Button
+        onClick={() => setStep(step + 1)}
+        disabled={answers.food.length === 0}
+        className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
+      >
+        It better be something nice!
+      </Button>
+    </motion.div>,
 
     // Step 4: Excitement Rating
     <motion.div key="step4" className="text-center" {...fadeInUp}>
-      <h2 className="text-3xl font-bold mb-6 text-pink-600">
+      <h2 className="text-3xl font-bold mb-6 text-pink-500">
         How excited are you?
       </h2>
-      <div className="max-w-md mx-auto mb-6 p-4 bg-white rounded-lg shadow-lg">
+      <div className="max-w-md mx-auto mb-6 p-4 bg-black rounded-lg shadow-lg">
         <motion.div className="relative h-6 mb-4">
           {[0, 25, 50, 75, 100].map((value) => (
             <motion.div
@@ -284,13 +280,13 @@ export default function EnchantingDateProposalApp() {
             setAnswers({ ...answers, excitement: value[0] })
           }
         />
-        <div className="flex justify-between mt-2">
+        <div className="flex justify-between mt-2 text-pink-500">
           <span>Let&apos;s Cancel!</span>
           <span>Can't wait!</span>
         </div>
       </div>
       <motion.div
-        className="text-2xl font-bold text-pink-600 mb-6"
+        className="text-2xl font-bold text-pink-500 mb-6"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ type: "spring", stiffness: 260, damping: 20 }}
@@ -302,7 +298,7 @@ export default function EnchantingDateProposalApp() {
           setStep(step + 1);
           setTimeout(triggerConfetti, 500);
         }}
-        className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105"
+        className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
       >
         Let&apos;s make it official!
       </Button>
@@ -310,13 +306,13 @@ export default function EnchantingDateProposalApp() {
 
     // Step 5: Final Message
     <motion.div key="step5" className="text-center" {...fadeInUp}>
-      <h2 className="text-4xl font-bold mb-6 text-pink-600">
+      <h2 className="text-4xl font-bold mb-6 text-pink-500">
         It&apos;s a date!
       </h2>
-      <p className="text-xl mb-2 text-pink-500">
+      <p className="text-xl mb-2 text-pink-400">
         I&apos;ll see you on:
       </p>
-      <p className="text-2xl font-bold mb-6 text-pink-600">
+      <p className="text-2xl font-bold mb-6 text-pink-500">
         {answers.date?.toDateString()} at {answers.time}
       </p>
       <motion.img
@@ -326,24 +322,23 @@ export default function EnchantingDateProposalApp() {
         src="https://media1.tenor.com/m/LwVdzXRxS_EAAAAC/chillguy.gif"
         alt="Excited bear gif"
         className="w-full max-w-md mx-auto mb-4 rounded-lg shadow-lg"
-      />{" "}
+      />
       <motion.div
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ delay: 0.5, type: "spring", stiffness: 260, damping: 20 }}
       >
-       
       </motion.div>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}
-        className="mt-6 text-lg text-pink-500"
+        className="mt-6 text-lg text-pink-400"
       >
-         <p>We&apos;ll watch &quot;{answers.movie}&quot; together.</p>
-        <p>Then We&apos;ll enjoy some delicious {answers.food.join(", ")}.</p>
+        <p>We&apos;ll watch &quot;{answers.movie}&quot; together.</p>
+        <p>Then we&apos;ll enjoy some delicious {answers.food.join(", ")}.</p>
         <p>You paying tho😁</p>
-        <p className="mt-4 font-bold">
+        <p className="mt-4 font-bold text-pink-500">
           Your excitement level: {answers.excitement}/100
         </p>
       </motion.div>
@@ -377,11 +372,11 @@ export default function EnchantingDateProposalApp() {
   }, [step, answers, steps.length]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-100 to-purple-100 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-black to-pink-200 flex items-center justify-center p-4">
       <Suspense fallback={null}>
       </Suspense>
       <motion.div
-        className="bg-white bg-opacity-90 rounded-2xl shadow-2xl p-8 max-w-2xl w-full"
+        className="bg-black bg-opacity-90 rounded-2xl shadow-2xl p-8 max-w-2xl w-full"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
