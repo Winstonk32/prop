@@ -85,7 +85,7 @@ export default function EnchantingDateProposalApp() {
           }}
           className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
         >
-          Yes, I&apos;d love to!
+          Yes, I'd love to!
         </Button>
         <Dialog>
           <DialogTrigger asChild>
@@ -120,7 +120,7 @@ export default function EnchantingDateProposalApp() {
               }}
               className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
-              Okay, I&apos;ll come!
+              Okay, I'll come!
             </Button>
           </DialogContent>
         </Dialog>
@@ -280,7 +280,7 @@ export default function EnchantingDateProposalApp() {
           }
         />
         <div className="flex justify-between mt-2 text-pink-500">
-          <span>Let&apos;s Cancel!</span>
+          <span>Let's Cancel!</span>
           <span>Can't wait!</span>
         </div>
       </div>
@@ -299,7 +299,7 @@ export default function EnchantingDateProposalApp() {
         }}
         className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
       >
-        Let&apos;s make it official!
+        Let's make it official!
       </Button>
     </motion.div>,
 
@@ -334,8 +334,8 @@ export default function EnchantingDateProposalApp() {
         transition={{ delay: 1, duration: 1 }}
         className="mt-6 text-lg text-pink-400"
       >
-        <p>We&apos;ll watch &quot;{answers.movie}&quot; together.</p>
-        <p>Then we&apos;ll enjoy some delicious {answers.food.join(", ")}.</p>
+        <p>We'll watch &quot;{answers.movie}&quot; together.</p>
+        <p>Then we'll enjoy some delicious {answers.food.join(", ")}.</p>
         <p>You paying tho😁</p>
         <p className="mt-4 font-bold text-pink-500">
           Your excitement level: {answers.excitement}/100
@@ -347,7 +347,7 @@ export default function EnchantingDateProposalApp() {
   useEffect(() => {
     const saveAnswers = async () => {
       console.log('Saved answers:', answers);
-      const submittedAnswers = Object.entries(answers).filter(([key, value]) => value !== undefined);
+      const submittedAnswers = Object.entries(answers).filter(([ value]) => value !== undefined);
       // Save to localStorage
       localStorage.setItem('dateProposalAnswers', JSON.stringify(submittedAnswers));
 
