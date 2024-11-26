@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, Suspense } from "react";
-import dynamic from "next/dynamic";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
@@ -21,7 +20,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Heart, Star, Coffee, Film, Utensils, Clock, IceCreamCone, Pizza, Ban } from "lucide-react";
+import { Heart,  Coffee, Film, Utensils, Clock, IceCreamCone, Pizza, Ban } from "lucide-react";
 import confetti from "canvas-confetti";
 
 interface Answers {
