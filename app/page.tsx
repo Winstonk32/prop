@@ -252,6 +252,7 @@ export default function EnchantingDateProposalApp() {
         className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
       >
         It better be something nice!
+        click to continue
       </Button>
     </motion.div>,
 
